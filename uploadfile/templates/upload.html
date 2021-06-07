@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uploadfile</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<form id="upload-file" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="formFileLg" class="form-label">Choose to Upload your file <br></label>
+        <input class="form-control form-control-lg" id="formFileLg" name="upload" type="file">
+    </div>
+    <button type="submit">Upload</button>
+    <button type="button">View Records</button>
+
+</form>
+
+</p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+    $('#upload-file-btn').click(function () {
+
+
+        var form_data = new FormData($('#upload-file')[0]);
+        $.ajax({
+            type: 'POST',
+            url: '{% url "excel_to_json" %}',
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (data) {
+
+                document.getElementById("json_data_new").innerHTML = data["json_data"];
+
+            },
+        });
+    });
+
+
+</script>
+
+</body>
+</html>

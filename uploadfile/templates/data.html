@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Data</title>
+</head>
+<body>
+
+<h4 style="text-align: center;">Customer Data</h4>
+<table class="table table-hover" scope="col" style="border-style:solid; border-width:1px; border-color: #000">
+    <thead scope="col" style="border-style:solid; border-width:1px; border-color: #000">
+    <tr scope="col" style="border-style:solid; border-width:1px; border-color: #000">
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Pickup Address ID</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Show Information on Air
+            Waybill
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Consignee City Name</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Consignee Name</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Consignee Address</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Consignee Phone Number 1
+            (03000000000)
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Consignee Phone Number 2
+            (03000000000)
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Consignee Email Address
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Self Collection</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Order ID</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Order Date (YYYY-MM-DD)
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Item Product Type ID</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Item Description</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Item Quantity</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Item Insurance</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Product Value</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Special Instructions</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Estimated Weight (kg)</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Mode of Shipment ID</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Same Day Timing ID</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Collection Amount</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Mode of Payment ID</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Charges Mode ID</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Pieces</th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Shipper Reference Number
+            1
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Shipper Reference Number
+            2
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Shipper Reference Number
+            3
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Shipper Reference Number
+            4
+        </th>
+        <th scope="col" style="border-style:solid; border-width:1px; border-color: #000">Shipper Reference Number
+            5
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for cu in customers %}
+        <tr>
+            <td>{{ cu.pickup_address_id }}</td>
+            <td>{{ cu.show_information_on_air_waybill }}</td>
+            <td>{{ cu.consignee_city_name }}</td>
+            <td>{{ cu.consignee_name }}</td>
+            <td>{{ cu.consignee_address }}</td>
+            <td>{{ cu.consignee_phone_number_1 }}</td>
+            <td>{{ cu.consignee_phone_number_2 }}</td>
+            <td>{{ cu.consignee_email_address }}</td>
+            <td>{{ cu.self_collection }}</td>
+            <td>{{ cu.order_id }}</td>
+            <td>{{ cu.order_date }}</td>
+            <td>{{ cu.item_product_type_id }}</td>
+            <td>{{ cu.item_description }}</td>
+            <td>{{ cu.item_quantity }}</td>
+            <td>{{ cu.item_insurance }}</td>
+            <td>{{ cu.product_value }}</td>
+            <td>{{ cu.special_instructions }}</td>
+            <td>{{ cu.estimated_weight }}</td>
+            <td>{{ cu.mode_of_shipment_id }}</td>
+            <td>{{ cu.same_day_timing_id }}</td>
+            <td>{{ cu.collection_amount }}</td>
+            <td>{{ cu.mode_of_payment_id }}</td>
+            <td>{{ cu.charges_mode_id }}</td>
+            <td>{{ cu.pieces }}</td>
+            <td>{{ cu.shipper_reference_number_1 }}</td>
+            <td>{{ cu.shipper_reference_number_2 }}</td>
+            <td>{{ cu.shipper_reference_number_3 }}</td>
+            <td>{{ cu.shipper_reference_number_4 }}</td>
+            <td>{{ cu.shipper_reference_number_5 }}</td>
+            <td>{{ cu.Status }}</td>
+
+
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
